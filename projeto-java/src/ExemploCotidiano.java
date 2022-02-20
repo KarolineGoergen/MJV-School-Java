@@ -20,6 +20,10 @@ public class ExemploCotidiano {
         quantidadeProduto = entrada.next();
 
         System.out.println("");
+        System.out.println("Total da Compra");
+        System.out.println(new BigDecimal(valorProduto).multiply(new BigDecimal(quantidadeProduto)));
+
+        System.out.println("");
         System.out.print("Dinheiro: ");
         dinheiro = entrada.next();
 
@@ -27,29 +31,25 @@ public class ExemploCotidiano {
         String totalConvertido = total.toPlainString();
 
         System.out.println("");
-        System.out.println("Total da Compra");
-        System.out.println(new BigDecimal(valorProduto).multiply(new BigDecimal(quantidadeProduto)));
-
-        System.out.println("");
         System.out.println("Troco");
         System.out.println(new BigDecimal(dinheiro).subtract(new BigDecimal(totalConvertido)));
 
-        System.out.println("");
-        System.out.println("Total da compra mais o dinheiro");
-        BigDecimal resultado = nomeProduto(dinheiro,totalConvertido);
+        BigDecimal resultado = soma(dinheiro,totalConvertido);
+
+        System.out.println("Soma do dinheiro + total da compra");
+        System.out.println(resultado);
 
         System.out.println("");
         System.out.println("Comparação do dinheiro com o total da compra");
-        System.out.println(resultado);
         System.out.println(new BigDecimal(dinheiro).compareTo(new BigDecimal(totalConvertido)));
 
     }
-     public static BigDecimal nomeProduto(String dinheiro, String totalConvertido){
+     public static BigDecimal soma(String dinheiro, String totalConvertido){
 
         System.out.println("");
         BigDecimal total = new BigDecimal(dinheiro).add(new BigDecimal(totalConvertido));
 
         return total;
-       
+
     }
 }
