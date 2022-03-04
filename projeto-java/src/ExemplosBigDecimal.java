@@ -19,10 +19,6 @@ import java.math.RoundingMode;
          System.out.println("Compara");
          System.out.println(new BigDecimal("22.00").compareTo(new BigDecimal("22.00")));
 
-         System.out.println("");
-         System.out.println("Divide");
-         System.out.println(new BigDecimal("2.00").divide(new BigDecimal("2.00")));
-
          //Para especificar a quantidade de casas decimais, informar quantos números após a vírgula deseja e utilizar o RoundingMode.UP
          System.out.println("");
          System.out.println("Divide com número espeficíco de números após a vírgula");
