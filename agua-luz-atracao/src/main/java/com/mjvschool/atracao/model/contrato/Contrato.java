@@ -1,5 +1,6 @@
 package com.mjvschool.atracao.model.contrato;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import com.mjvschool.atracao.model.cadastro.Endereco;
@@ -44,6 +45,7 @@ public class Contrato {
 	public void setCadastroEndereco(Endereco endereco){
 		this.endereco = endereco;
 	}
+
 	@Override
 	public String toString() {
 		return "Contrato [numeroProtocolo=" + numeroProtocolo + ", dataHora=" + dataHora + "]";

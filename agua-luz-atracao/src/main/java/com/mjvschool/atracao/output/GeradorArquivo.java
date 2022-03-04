@@ -26,7 +26,8 @@ public class GeradorArquivo {
 			conteudo.append(ct.getCadastro().getEndereco().getEstado().concat(";"));
 			conteudo.append(ct.getCadastro().getEndereco().getCep().concat(";"));
 			conteudo.append(ct.getNumeroProtocolo());
-			conteudo.append(ct.getDataHora());
+			conteudo.append(";");
+			conteudo.append(TextoUtil.formatar(ct.getDataHora()));
 			conteudo.append("\n");
 		}
 		

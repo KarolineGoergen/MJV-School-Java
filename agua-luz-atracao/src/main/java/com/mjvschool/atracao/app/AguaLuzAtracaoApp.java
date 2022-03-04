@@ -21,7 +21,7 @@ public class AguaLuzAtracaoApp {
 		List<Contrato> contratos =  contratoRepositorio.listarTodos();
 		GeradorArquivo gerador = new GeradorArquivo();
 		gerador.gerarArquivoCsv(contratos);
-		gerador.gerarArquivoTxt(contratos);
+		//gerador.gerarArquivoTxt(contratos);
 		
 	}
 	private static void faseAtracao() {

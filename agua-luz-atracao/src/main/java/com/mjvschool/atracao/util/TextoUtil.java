@@ -1,5 +1,9 @@
 package com.mjvschool.atracao.util;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class TextoUtil {
 	public static String preencher(String textoOriginal, int tamanhoMaximo) {
 		String formato = "%-" + tamanhoMaximo + "s";
@@ -14,6 +18,12 @@ public class TextoUtil {
 		String novaString = preencher(textoOriginal, tamanhoMaximo);
 		novaString = cortar(novaString, tamanhoMaximo);
 		return novaString;
+	}
+	public static String formatar(Date dataHora){
+		Date data = new Date();
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        String dataFormatada = dateFormat.format(data);
+		return dataFormatada;
 	}
 	public static void main(String[] args) {
 		String nomeCompleto = "Gleyson Sampaio de Oliveira";
