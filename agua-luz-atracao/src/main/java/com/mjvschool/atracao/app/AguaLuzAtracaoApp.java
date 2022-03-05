@@ -1,7 +1,12 @@
 package com.mjvschool.atracao.app;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.Date;
 import java.util.List;
+
+import javax.print.attribute.standard.DateTimeAtCompleted;
 
 import com.mjvschool.atracao.model.cadastro.Endereco;
 import com.mjvschool.atracao.model.cadastro.Pais;
@@ -47,7 +52,11 @@ public class AguaLuzAtracaoApp {
 		endereco.setComplemento("AP 210 BL CENTAURO");
 		pessoa.setEndereco(endereco);
 		contrato1.setCadastro(pessoa);
-		contrato1.setDataHora(new Date());
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("HH:mm");
+        LocalDateTime teste = LocalDateTime.of(2022, 05, 07, 15, 17);
+        contrato1.setData(formatter.format(teste));
+		contrato1.setHora(formatter2.format(teste));
 		
 		contratoRepositorio.gravar(contrato1);
 		

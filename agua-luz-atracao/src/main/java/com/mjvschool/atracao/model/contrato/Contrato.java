@@ -1,6 +1,7 @@
 package com.mjvschool.atracao.model.contrato;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 import com.mjvschool.atracao.model.cadastro.Endereco;
@@ -11,21 +12,28 @@ import com.mjvschool.atracao.model.cadastro.Servico;
 public class Contrato {
 	private long numeroProtocolo;
 	private Pessoa cadastro;
-	private Date dataHora;
+	private String data;
+	private String hora;
 	private Servico servico;
 	private Endereco endereco;
 
 	public Servico getServico() {
 		return servico;
 	}
+	public String getHora() {
+		return hora;
+	}
+	public void setHora(String hora) {
+		this.hora = hora;
+	}
 	public void setServico(Servico servico) {
 		this.servico = servico;
 	}
-	public void setDataHora(Date dataHora) {
-		this.dataHora = dataHora;
+	public void setData(String data) {
+		this.data = data;
 	}
-	public Date getDataHora() {
-		return dataHora;
+	public String getData() {
+		return data;
 	}
 	public long getNumeroProtocolo() {
 		return numeroProtocolo;
@@ -48,7 +56,7 @@ public class Contrato {
 
 	@Override
 	public String toString() {
-		return "Contrato [numeroProtocolo=" + numeroProtocolo + ", dataHora=" + dataHora + "]";
+		return "Contrato [numeroProtocolo=" + numeroProtocolo + ", data=" + data + " hora="+hora+"]";
 	}
 	
 }

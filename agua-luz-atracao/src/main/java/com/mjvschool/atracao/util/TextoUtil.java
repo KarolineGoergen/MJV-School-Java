@@ -2,6 +2,7 @@ package com.mjvschool.atracao.util;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class TextoUtil {
@@ -19,12 +20,7 @@ public class TextoUtil {
 		novaString = cortar(novaString, tamanhoMaximo);
 		return novaString;
 	}
-	public static String formatar(Date dataHora){
-		Date data = new Date();
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm");
-        String dataFormatada = dateFormat.format(data);
-		return dataFormatada;
-	}
+	
 	public static void main(String[] args) {
 		String nomeCompleto = "Gleyson Sampaio de Oliveira";
 		System.out.println(cortar(nomeCompleto, 30));
