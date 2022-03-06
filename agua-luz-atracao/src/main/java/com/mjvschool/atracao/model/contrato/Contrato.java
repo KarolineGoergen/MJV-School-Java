@@ -1,8 +1,5 @@
 package com.mjvschool.atracao.model.contrato;
 
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.util.Date;
 
 import com.mjvschool.atracao.model.cadastro.Endereco;
 import com.mjvschool.atracao.model.cadastro.Pessoa;

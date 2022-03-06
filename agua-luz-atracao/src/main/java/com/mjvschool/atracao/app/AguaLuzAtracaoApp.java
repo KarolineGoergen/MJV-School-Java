@@ -2,11 +2,7 @@ package com.mjvschool.atracao.app;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
-import java.util.Date;
 import java.util.List;
-
-import javax.print.attribute.standard.DateTimeAtCompleted;
 
 import com.mjvschool.atracao.model.cadastro.Endereco;
 import com.mjvschool.atracao.model.cadastro.Pais;
@@ -26,7 +22,7 @@ public class AguaLuzAtracaoApp {
 		List<Contrato> contratos =  contratoRepositorio.listarTodos();
 		GeradorArquivo gerador = new GeradorArquivo();
 		gerador.gerarArquivoCsv(contratos);
-		//gerador.gerarArquivoTxt(contratos);
+		gerador.gerarArquivoTxt(contratos);
 		
 	}
 	private static void faseAtracao() {
@@ -37,8 +33,8 @@ public class AguaLuzAtracaoApp {
 		Pessoa pessoa = new Pessoa();
 		pessoa.setCpf("007.324.223.21");
 		pessoa.setNome("Raimundo Nonato Loureiro Castelo Branco");
-		pessoa.setCelular("98965498760");
-		//pessoa.setRg("89789");
+		pessoa.setCelular("(11)99768-1515");
+		pessoa.setRg("337655");
 		pessoa.setPais(Pais.BRASIL);
 		
 		
@@ -46,7 +42,7 @@ public class AguaLuzAtracaoApp {
 		endereco.setBairro("São Sebastião");
 		endereco.setCep("07.210.715");
 		endereco.setCidade("São Raimundo Nonato");
-		endereco.setEstado("Sp");
+		endereco.setUf("Sp");
 		endereco.setLogradouro("Rua Sebastião Firmino");
 		endereco.setNumero("123");
 		endereco.setComplemento("AP 210 BL CENTAURO");
@@ -57,7 +53,7 @@ public class AguaLuzAtracaoApp {
         LocalDateTime teste = LocalDateTime.of(2022, 05, 07, 15, 17);
         contrato1.setData(formatter.format(teste));
 		contrato1.setHora(formatter2.format(teste));
-		
+
 		contratoRepositorio.gravar(contrato1);
 		
 		

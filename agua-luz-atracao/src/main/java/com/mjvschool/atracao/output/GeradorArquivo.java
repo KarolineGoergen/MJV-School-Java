@@ -16,6 +16,7 @@ public class GeradorArquivo {
 		StringBuilder conteudo = new StringBuilder();
 		for(Contrato ct: contratos) {
 			conteudo.append(ct.getCadastro().getCpf().concat(";"));
+			conteudo.append(ct.getCadastro().getRg().concat(";"));
 			conteudo.append(ct.getCadastro().getNome().concat(";"));
 			conteudo.append(ct.getCadastro().getCelular().concat(";"));
 			conteudo.append(ct.getCadastro().getEndereco().getLogradouro().concat(";"));
@@ -23,7 +24,7 @@ public class GeradorArquivo {
 			conteudo.append(ct.getCadastro().getEndereco().getComplemento().concat(";"));
 			conteudo.append(ct.getCadastro().getEndereco().getBairro().concat(";"));
 			conteudo.append(ct.getCadastro().getEndereco().getCidade().concat(";"));
-			conteudo.append(ct.getCadastro().getEndereco().getEstado().concat(";"));
+			conteudo.append(ct.getCadastro().getEndereco().getUf().concat(";"));
 			conteudo.append(ct.getCadastro().getEndereco().getCep().concat(";"));
 			conteudo.append(ct.getNumeroProtocolo());
 			conteudo.append(";");
@@ -52,15 +53,28 @@ public class GeradorArquivo {
 			e.printStackTrace();
 		}
 	}
-	/*
+	
 	public void gerarArquivoTxt(List<Contrato> contratos) {
 		StringBuilder conteudo =new StringBuilder();
 		
 		for(Contrato ct: contratos) {
-			conteudo.append(ct.getCadastro().getCpf());
-			conteudo.append(TextoUtil.ajustar(ct.getCadastro().getNome(), 30) );
-			conteudo.append(ct.getCadastro().getCelular());
-			conteudo.append("\n");
+			conteudo.append(ct.getCadastro().getCpf().replaceAll("\\p{Punct}", ""));
+			conteudo.append(ct.getCadastro().getRg().replaceAll("\\p{Punct}", ""));
+			conteudo.append(TextoUtil.ajustar(ct.getCadastro().getNome(), 30).toUpperCase() );	
+			conteudo.append(ct.getCadastro().getCelular().replaceAll("\\p{Punct}", ""));
+			conteudo.append(TextoUtil.ajustar(ct.getCadastro().getEndereco().getLogradouro().toUpperCase(),20));
+			conteudo.append(String.format("%06d",Integer.parseInt(ct.getCadastro().getEndereco().getNumero())));
+			conteudo.append(TextoUtil.ajustar(ct.getCadastro().getEndereco().getComplemento(), 10));	
+			conteudo.append(ct.getCadastro().getEndereco().getBairro().toUpperCase());
+			conteudo.append(ct.getCadastro().getEndereco().getCidade().toUpperCase());
+			conteudo.append(ct.getCadastro().getEndereco().getUf().toUpperCase());
+			conteudo.append(ct.getCadastro().getEndereco().getCep().replaceAll("\\p{Punct}", ""));
+			conteudo.append(TextoUtil.converterValorProtocolo(ct.getNumeroProtocolo()));
+			conteudo.append(ct.getData().replaceAll("\\p{Punct}", ""));
+			conteudo.append(ct.getHora().replaceAll("\\p{Punct}", ""));
+			conteudo.append(TextoUtil.primeiraLetra(ct.getServico().getNome()));
+			conteudo.append(TextoUtil.converterValor(ct.getServico().getValor()));
+			
 		}
 		
 		System.out.println(conteudo.toString());
@@ -77,5 +91,5 @@ public class GeradorArquivo {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}*/
+	}
 }
