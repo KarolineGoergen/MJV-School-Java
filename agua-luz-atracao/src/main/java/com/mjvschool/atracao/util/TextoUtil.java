@@ -38,7 +38,12 @@ public class TextoUtil {
 		char inicial = nome.charAt(0);
 		return inicial;
 	}
-	
+	public static String dataNova(String data){
+		String data1 = data.replaceAll("-", "/"); 
+		String[] s = data.split("/"); 
+		String novaData = s[2]+"/"+s[1]+"/"+s[0];
+		return novaData;
+	}
 	
 	public static void main(String[] args) {
 		String nomeCompleto = "Gleyson Sampaio de Oliveira";

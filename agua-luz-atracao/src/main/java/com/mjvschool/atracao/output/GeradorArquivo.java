@@ -70,7 +70,7 @@ public class GeradorArquivo {
 			conteudo.append(ct.getCadastro().getEndereco().getUf().toUpperCase());
 			conteudo.append(ct.getCadastro().getEndereco().getCep().replaceAll("\\p{Punct}", ""));
 			conteudo.append(TextoUtil.converterValorProtocolo(ct.getNumeroProtocolo()));
-			conteudo.append(ct.getData().replaceAll("\\p{Punct}", ""));
+			conteudo.append(TextoUtil.dataNova(ct.getData()).replaceAll("\\p{Punct}", ""));
 			conteudo.append(ct.getHora().replaceAll("\\p{Punct}", ""));
 			conteudo.append(TextoUtil.primeiraLetra(ct.getServico().getNome()));
 			conteudo.append(TextoUtil.converterValor(ct.getServico().getValor()));
