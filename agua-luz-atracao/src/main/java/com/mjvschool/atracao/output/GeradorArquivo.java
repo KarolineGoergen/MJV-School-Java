@@ -79,11 +79,11 @@ public class GeradorArquivo {
 		
 		System.out.println(conteudo.toString());
 		
-		File output = new File("C:\\estudo\\mjv-java-school\\agua-luz-output");
+		File output = new File("C:\\MJV-School-Java\\agua-luz-output");
 		if(!output.exists())
 			output.mkdirs();
 		
-		Path path = Paths.get("C:\\estudo\\mjv-java-school\\agua-luz-output\\agua-luz-contratos.txt");
+		Path path = Paths.get("C:\\MJV-School-Java\\agua-luz-output\\agua-luz-contratos.txt");
 
 		try {
 			Files.write(path, conteudo.toString().getBytes(StandardCharsets.UTF_8));
