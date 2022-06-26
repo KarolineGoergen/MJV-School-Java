@@ -11,9 +11,11 @@ public class AppTest {
     @Test
     public void testeTamanhoMaximoNome(){
 
+        String parametro = "Karoline Goergen Aparecida Vanzela ";
+
         TextoUtil nome = new TextoUtil();
 
-        String tamanho = nome.cortar("Karoline Goergen Aparecida Vanzela ", 30);
+        String tamanho = nome.cortar(parametro, 30);
 
         boolean flag = true;
 
@@ -32,9 +34,11 @@ public class AppTest {
     @Test
     public void testeFormatoData(){
 
+        String parametro = "07/05/2022";
+
         TextoUtil data = new TextoUtil();
 
-        String dataFormatoUS = data.dataNova("07/05/2022");
+        String dataFormatoUS = data.dataNova(parametro);
 
         Assertions.assertEquals("2022/05/07", dataFormatoUS);
 
@@ -44,9 +48,11 @@ public class AppTest {
     @Test
     public void inicialServico(){
 
+        String parametro = "Luz";
+
         TextoUtil servico = new TextoUtil();
 
-        char inicial = servico.primeiraLetra("Luz");
+        char inicial = servico.primeiraLetra(parametro);
 
         Assertions.assertEquals('L', inicial);
 
@@ -56,6 +62,8 @@ public class AppTest {
     //verifica se o protocolo possui 10 digitos, e caso possua menos, adiciona zeros a esquerda
     @Test
     public void TestProtocolo(){
+
+        int parametro = 123;
 
         TextoUtil protocolo = new TextoUtil();
 
