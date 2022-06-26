@@ -27,7 +27,7 @@ public class AguaLuzAtracaoApp {
 	}
 	private static void faseAtracao() {
 		Contrato contrato1 = new Contrato();
-		contrato1.setNumeroProtocolo(1984365);
+		contrato1.setNumeroProtocolo(65);
 		contrato1.setServico(Servico.LUZ);
 		
 		Pessoa pessoa = new Pessoa();

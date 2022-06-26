@@ -30,8 +30,7 @@ public class TextoUtil {
 	public static String converterValorProtocolo(long valor){
 		long valor1 = valor;
 		String str = String.valueOf(valor1);
-		str = str.replaceAll("\\D+","");
-		str =  "000"+ str ;
+		str = str.format("%010d", valor);
 		return str;
 	}
 	public static char primeiraLetra(String nome){

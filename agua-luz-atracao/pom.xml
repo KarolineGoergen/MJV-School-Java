@@ -5,4 +5,12 @@
   <version>1.0</version>
   <name>Agua Luz Atração</name>
   <description>Sistema para atração de cadastros para contratos de instalação de Água e Luz</description>
+  <dependencies>
+   <dependency>
+     <groupId>org.junit.jupiter</groupId>
+     <artifactId>junit-jupiter-engine</artifactId>
+     <version>5.8.2</version>
+     <scope>test</scope>
+   </dependency>
+ </dependencies>
 </project>
